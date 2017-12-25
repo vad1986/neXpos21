@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private int x;
     private Button btn_calc;
     private String numCalc;
     private TextView screenCalc;
@@ -62,11 +63,17 @@ public class MainActivity extends AppCompatActivity {
                 screenCalc.setText(numCalc);
                 break;
             case R.id.buttonEnter:
+                double prise = Double.parseDouble(numCalc);
                 numCalc="";
+                screenCalc.setText(numCalc);
+                break;
+            case R.id.buttonDot:
+                numCalc+=".";
                 screenCalc.setText(numCalc);
                 break;
         }
     }
+
 
 
 }

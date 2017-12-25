@@ -5,6 +5,7 @@
     <string name="EditTextPassword">Password</string>
     <string name="TextViewProductName">Product name</string>
     <string name="TextViewPric">Pric</string>
-    <string name="TextViewAmount">Amount</string>
+    <string name="TextViewAmount">Amount</string>.
+    <string name="ButtonEnter">Enter</string>
     <string name="title_activity_test">TestActivity</string>
 </resources>
