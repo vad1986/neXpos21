@@ -7,6 +7,198 @@
     tools:context="com.arkadiy.enter.imenu.MainActivity">
 
 
+
+    <HorizontalScrollView
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp"
+        android:id="@+id/horizontalScrollView2">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/light"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="loadAll"
+                    android:text="Light Drinks" />
+
+                <Button
+                    android:id="@+id/beers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="loadAll"
+                    android:text="Beer" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="loadAll"
+                    android:text="blabla" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="loadAll"
+                    android:text="blabla" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="blabla"
+                    android:onClick="loadAll"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+
     <RelativeLayout
         android:id="@+id/relativeLayoutMonitorCalulator"
         android:layout_width="250dp"
@@ -60,6 +252,15 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:text="@string/TextViewProductName" />
+
+        <ListView
+            android:id="@+id/listViewPrice"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textViewPrice"
+            android:layout_marginTop="30dp" />
 
     </RelativeLayout>
 
@@ -269,11 +470,13 @@
     <LinearLayout
         android:layout_width="80dp"
         android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentTop="false"
+        android:orientation="vertical"
         android:scrollbars="vertical"
-        android:orientation="vertical">
+        android:paddingTop="100dp">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -282,7 +485,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:gravity="bottom"
+                android:orientation="vertical">
 
                 <Button
                     android:id="@+id/buttonFast9"
@@ -297,15 +501,15 @@
                     android:text="Button" />
 
                 <Button
-                    android:id="@+id/buttonFast7"
-                    android:layout_width="match_parent"
-                    android:layout_height="80dp"
-                    android:text="Button" />
-
-                <Button
                     android:id="@+id/buttonFast6"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
+                    android:text="Button" />
+
+                <Button
+                    android:id="@+id/buttonFast7"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
                     android:text="Button" />
 
                 <Button
@@ -341,6 +545,18 @@
         </ScrollView>
 
     </LinearLayout>
+
+
+    <GridLayout
+        android:id="@+id/gridTest"
+        android:layout_width="620dp"
+        android:layout_height="160dp"
+        android:layout_below="@+id/horizontalScrollView2"
+        android:layout_toLeftOf="@+id/relativeLayoutSummariesScreen"
+        android:layout_toStartOf="@+id/relativeLayoutSummariesScreen"
+        android:columnCount="4">
+
+    </GridLayout>
 
 
 </RelativeLayout>
