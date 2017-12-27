@@ -17,17 +17,15 @@ public class DataConfig  extends SQLiteOpenHelper {
 
     private static final int VERSION=3;
     private static final String DB_NAME ="products";
-    private static final String TABLE_NAME ="light_drinks";
+    private  String table_name =null;
     private SQLiteDatabase myDb=null;
 
     LinkedList <String> list=null;
 
-    private static final String CREATE_NOTES="CREATE TABLE "+ TABLE_NAME+ "(_id INTEGER NOT NULL PRIMARY KEY, "+
-            "drinkName TEXT NOT NULL, "+
-            "price REAL NOT NULL)";
+    private String create_products=null;
 
-    private static final String INSERT_QUERY =
-            "INSERT INTO light_drinks"+
+    private String insert_query =
+            "INSERT INTO "+table_name+
                     "(drinkName,price)"+
                     "VALUES"+
                     "('Coke',10.90), "+
@@ -48,22 +46,23 @@ public class DataConfig  extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(CREATE_NOTES);
-        db.execSQL(INSERT_QUERY);
+        db.execSQL(create_products);
+        db.execSQL(insert_query);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-        db.execSQL("DROP TABLE IF EXISTS "+ TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS "+ table_name);
 
         this.onCreate(db);
 
     }
 
-    public void setInsertQuery2(String name,float price){
-        String insert_query2=  "INSERT INTO light_drinks " +
+    public void setInsertQuery2(String tableName,String name,float price){
+        table_name=tableName;
+        String insert_query2=  "INSERT INTO " +table_name+
                 "(drinkName,price) "+
                 "VALUES"+
                 "('"+name+"',"+price+")";
@@ -88,4 +87,19 @@ public class DataConfig  extends SQLiteOpenHelper {
         }
         return list;
     }
+
+    public void createNewProductsTable(String tableName)
+    {
+        table_name=tableName;
+        create_products ="CREATE TABLE "+ table_name+ "(_id INTEGER NOT NULL PRIMARY KEY, "+
+            "drinkName TEXT NOT NULL, "+
+            "price REAL NOT NULL)";
+
+        myDb.execSQL(create_products);
+
+
+
+    }
+
+
 }

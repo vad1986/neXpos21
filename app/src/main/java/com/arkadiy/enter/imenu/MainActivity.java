@@ -1,5 +1,6 @@
 package com.arkadiy.enter.imenu;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
@@ -11,12 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridLayout;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 import java.util.LinkedList;
 import java.util.List;
+
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private  LinkedList <String> beers;
     private static boolean flag = false;
     private GridLayout layout;
+    private LinearLayout layout2=null;
 private  LinkedList<String> productName;
 
 
@@ -36,11 +43,21 @@ private  LinkedList<String> productName;
     private static SQLiteDatabase productsDB=null;
     private static SimpleCursorAdapter cursorAdapter=null;
     private static ListView listView=null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         screenCalc = (TextView)findViewById(R.id.editTextScreenCalc);
+
+
+
+
+
+
+
+
+
 
 
         dataConfig=new DataConfig(this);
@@ -52,8 +69,17 @@ private  LinkedList<String> productName;
 
 
 
+//        dataConfig.createNewProductsTable("beers");
+
+//        dataConfig.setInsertQuery2("beers","גולדסטאר",(float)10.90);
+//        dataConfig.setInsertQuery2("beers","היניקן",(float)9.90);
+//        dataConfig.setInsertQuery2("beers","קורונה",(float)11.90);
+//        dataConfig.setInsertQuery2("beers","קארלסברג",(float)12.90);
+//        dataConfig.setInsertQuery2("beers","מכאבי",(float)15.93);
 
 
+
+//dataConfig.createNewProductsTable("beers");
               ;
 
 
@@ -74,12 +100,30 @@ private  LinkedList<String> productName;
 //        listView.setAdapter(cursorAdapter);
 
 
+        TextView text=(TextView)findViewById(R.id.textView2);
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+//            boolean isNew = extras.getBoolean("category",false);
+            if (true) {
+                String inte=getIntent().getExtras().getString("category");
+                text.setText(inte);
+                dataConfig.createNewProductsTable(inte);
+                flag=false;
+
+            }
+            else
+            {
+                text.setText("nothing ");
+                flag=false;
+            }
+        }
+        else{
+            text.setText("nothing yet");
+        }
 
 
 
         numCalc="";
-
-
 
 
     }
@@ -161,7 +205,11 @@ public void changeProduct(String product){
 
             default:
                 if (flag)
+                {
                     layout.removeAllViews();
+                    flag=false;
+                }
+
                 break;
 
 
@@ -170,10 +218,12 @@ public void changeProduct(String product){
 
     }
 
-    public void fillInMenue(LinkedList <String> products) {
-        if (flag) {
-            layout.removeAllViews();
+    public void fillInMenue(LinkedList <String> products) {   //adds products to menue from database
 
+        if (flag)
+        {
+            layout.removeAllViews();
+            flag=false;
         }
 
 
@@ -181,16 +231,17 @@ public void changeProduct(String product){
             String name = products.get(i);
             Button tempBut = new Button(MainActivity.this);
 
-
-
-
-
             tempBut.setText(name);
             layout = (GridLayout) findViewById(R.id.gridTest);
             layout.addView(tempBut);
 
 
         }
+    }
+
+
+    public void addToCategoriesLayout(){//adds categories to top  scrollbar (linear layout) from database
+
     }
 
     public void adjustButtonSize(Button button) {
@@ -203,5 +254,9 @@ public void changeProduct(String product){
         button.setLayoutParams(params);
     }
 
+public void goToAddProd(View view){
+    Intent i = new Intent (this, AddProductsActivity.class);
+    startActivity(i);
+}
 
 }

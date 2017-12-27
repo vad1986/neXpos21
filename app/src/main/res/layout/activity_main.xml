@@ -7,190 +7,87 @@
     tools:context="com.arkadiy.enter.imenu.MainActivity">
 
 
-
     <HorizontalScrollView
-        android:layout_width="700dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:id="@+id/horizontalScrollView2"
+        android:layout_width="629dp"
+        android:layout_height="70dp"
         android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/linearLayout"
+        android:layout_toRightOf="@+id/linearLayout"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp"
-        android:id="@+id/horizontalScrollView2">
+        tools:layout_editor_absoluteY="16dp">
 
 
         <LinearLayout
+            android:id="@+id/linearCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/light"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="loadAll"
-                    android:text="Light Drinks" />
-
-                <Button
-                    android:id="@+id/beers"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="loadAll"
-                    android:text="Beer" />
-            </LinearLayout>
+            <Button
+                android:id="@+id/light"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="loadAll"
+                android:text="Light Drinks" />
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-            </LinearLayout>
+            <Button
+                android:id="@+id/beers"
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="loadAll"
+                android:text="Beer" />
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-            </LinearLayout>
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="loadAll"
+                android:text="blabla" />
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="loadAll"
-                    android:text="blabla" />
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="loadAll"
-                    android:text="blabla" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="loadAll"
+                android:text="blabla" />
 
 
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="loadAll"
+                android:text="blabla" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="blabla"
-                    android:onClick="loadAll"/>
-            </LinearLayout>
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="loadAll"
+                android:text="blabla" />
+
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="loadAll"
+                android:text="blabla" />
+
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="loadAll"
+                android:text="blabla" />
+            >
+
+
+            <Button
+                android:layout_width="80dp"
+                android:layout_height="70dp"
+                android:onClick="loadAll"
+                android:text="blabla" />
 
 
         </LinearLayout>
@@ -261,6 +158,18 @@
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textViewPrice"
             android:layout_marginTop="30dp" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/textViewAmount"
+            android:layout_alignStart="@+id/textViewAmount"
+            android:layout_below="@+id/listViewPrice"
+            android:layout_marginLeft="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="28dp"
+            android:text="TextView" />
 
     </RelativeLayout>
 
@@ -476,7 +385,8 @@
         android:layout_alignParentTop="false"
         android:orientation="vertical"
         android:scrollbars="vertical"
-        android:paddingTop="100dp">
+        android:paddingTop="100dp"
+        android:id="@+id/linearLayout">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -492,7 +402,8 @@
                     android:id="@+id/buttonFast9"
                     android:layout_width="match_parent"
                     android:layout_height="70dp"
-                    android:text="Button" />
+                    android:text="הוספת מוצרים"
+                    android:onClick="goToAddProd"/>
 
                 <Button
                     android:id="@+id/buttonFast8"
