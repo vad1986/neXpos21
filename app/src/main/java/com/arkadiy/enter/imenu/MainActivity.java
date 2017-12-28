@@ -1,6 +1,7 @@
 package com.arkadiy.enter.imenu;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
@@ -40,43 +41,46 @@ private  LinkedList<String> productName;
 
 
     private static DataConfig dataConfig=null;
-    private static SQLiteDatabase productsDB=null;
+//    private static SQLiteDatabase productsDB=null;
     private static SimpleCursorAdapter cursorAdapter=null;
     private static ListView listView=null;
+    private SQLiteDatabase productsDB=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences prefs = null;
+        prefs = getSharedPreferences("com.arkadiy.enter.imenu", MODE_PRIVATE);
+
+
         screenCalc = (TextView)findViewById(R.id.editTextScreenCalc);
-
-
-
-
-
-
-
-
-
+        productName = new LinkedList<String>();
 
 
         dataConfig=new DataConfig(this);
          productsDB=dataConfig.getWritableDatabase();
+        dataConfig.setDb(productsDB);
           listView=(ListView)findViewById(R.id.listViewPrice);
 
-        productName = new LinkedList<String>();
+       if(prefs.getBoolean("firstrun", true)) //checks if app runs first time
+       {
+            dataConfig.setInsertQuery2("beers", "גולדסטאר", (float) 10.90);
+            dataConfig.setInsertQuery2("beers", "היניקן", (float) 9.90);
+            dataConfig.setInsertQuery2("beers", "קורונה", (float) 11.90);
+            dataConfig.setInsertQuery2("beers", "קארלסברג", (float) 12.90);
+            dataConfig.setInsertQuery2("beers", "מכאבי", (float) 15.93);
 
+            dataConfig.createNewProductsTable("light_drinks");
+            dataConfig.setInsertQuery2("light_drinks", "קולה", (float) 10.90);
+            dataConfig.setInsertQuery2("light_drinks", "ספרייט", (float) 9.90);
+            dataConfig.setInsertQuery2("light_drinks", "סודה", (float) 11.90);
+            dataConfig.setInsertQuery2("light_drinks", "אינגדי", (float) 12.90);
+            dataConfig.setInsertQuery2("light_drinks", "תפוחים", (float) 15.93);
 
+            prefs.edit().putBoolean("firstrun", false).commit();
 
-
-//        dataConfig.createNewProductsTable("beers");
-
-//        dataConfig.setInsertQuery2("beers","גולדסטאר",(float)10.90);
-//        dataConfig.setInsertQuery2("beers","היניקן",(float)9.90);
-//        dataConfig.setInsertQuery2("beers","קורונה",(float)11.90);
-//        dataConfig.setInsertQuery2("beers","קארלסברג",(float)12.90);
-//        dataConfig.setInsertQuery2("beers","מכאבי",(float)15.93);
-
+        }
 
 
 //dataConfig.createNewProductsTable("beers");

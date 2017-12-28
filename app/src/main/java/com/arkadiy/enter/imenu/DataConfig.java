@@ -15,25 +15,18 @@ import java.util.LinkedList;
 public class DataConfig  extends SQLiteOpenHelper {
 
 
-    private static final int VERSION=3;
-    private static final String DB_NAME ="products";
-    private  String table_name =null;
+    private static final int VERSION=1;
+    private static final String DB_NAME ="PRODUCTS";
+    private  String table_name ="beers";
     private SQLiteDatabase myDb=null;
 
     LinkedList <String> list=null;
 
-    private String create_products=null;
+    private String create_products= create_products ="CREATE TABLE "+ table_name+ "(_id INTEGER NOT NULL PRIMARY KEY, "+
+            "drinkName TEXT NOT NULL, "+
+            "price REAL NOT NULL)";;
 
-    private String insert_query =
-            "INSERT INTO "+table_name+
-                    "(drinkName,price)"+
-                    "VALUES"+
-                    "('Coke',10.90), "+
-                    "('Sprite',11.90), "+
-                    "('Nestea',12.90), "+
-                    "('Shweps',23.90), "+
-                    "('Eingedi',21.90), "+
-                    "('Pepsi',3.93)";
+    private String insert_query ="";
 
 
 
@@ -41,13 +34,13 @@ public class DataConfig  extends SQLiteOpenHelper {
 
     public DataConfig(Context context) {
         super(context, DB_NAME, null, VERSION);
-       myDb= super.getWritableDatabase();
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+
         db.execSQL(create_products);
-        db.execSQL(insert_query);
+
 
     }
 
@@ -99,6 +92,10 @@ public class DataConfig  extends SQLiteOpenHelper {
 
 
 
+    }
+
+    public void setDb(SQLiteDatabase db){
+        myDb=db;
     }
 
 
