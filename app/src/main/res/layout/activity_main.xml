@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"
 >
 
 
@@ -310,7 +312,7 @@
         android:layout_height="match_parent"
         android:id="@+id/relattiveLayoutL"
         android:layout_below="@+id/RelativeHeder"
-        android:layout_alignParentLeft="true"
+
         android:layout_toLeftOf="@+id/relattiveLayoutR"
         >
 
@@ -326,19 +328,22 @@
             <GridLayout
                 android:id="@+id/gridLayoutCategory"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-                android:columnCount="3">
+                android:layout_height="170dp"
+                android:columnCount="3"
+                >
 
 
                 <Button
                     android:layout_height="80dp"
                     android:layout_width="150dp"
-                    android:text="Category"/>
+                    android:text="שתייה קלה"
+                    android:onClick="loadAll"
+                    android:id="@+id/light"/>
                 <Button
                     android:layout_height="80dp"
                     android:layout_width="150dp"
-                    android:text="Category"/>
+                    android:text="Category"
+                    android:onClick="loadAll"/>
                 <Button
                     android:layout_height="80dp"
                     android:layout_width="150dp"
@@ -372,81 +377,12 @@
             <GridLayout
                 android:id="@+id/gridLayoutItem"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="465dp"
+                android:layout_alignParentBottom="true"
                 android:columnCount="3"
                 >
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
-                <Button
-                    android:layout_height="80dp"
-                    android:layout_width="150dp"
-                    android:text="item"/>
+
+
             </GridLayout>
 
         </RelativeLayout>
