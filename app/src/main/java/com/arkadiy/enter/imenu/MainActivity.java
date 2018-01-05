@@ -1,5 +1,6 @@
 package com.arkadiy.enter.imenu;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 import java.util.ArrayList;
@@ -41,10 +43,25 @@ public class MainActivity extends AppCompatActivity {
     private static SimpleCursorAdapter cursorAdapter=null;
     private static ListView listView=null;
     private SQLiteDatabase productsDB=null;
+    private GridLayout gLayout =null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        layout = (GridLayout) findViewById(R.id.gridLayoutItem);
+        gLayout= new GridLayout(this);
+
+        if(Math.pow(getScreenHeight(),2)+Math.pow(getScreenWidth(),2)>10)
+        {
+            RelativeLayout relativeLayout=(RelativeLayout)findViewById(R.id.relattiveLayoutL);
+            gLayout.setColumnCount(4);
+            relativeLayout.addView(gLayout);
+
+        }
+        else{
+            gLayout.setColumnCount(3);
+
+        }
 
         setContentView(R.layout.activity_main);
         SharedPreferences prefs = null;
@@ -85,6 +102,25 @@ public class MainActivity extends AppCompatActivity {
             prefs.edit().putBoolean("firstrun", false).commit();
 
         }
+
+
+
+    }
+
+
+
+    public static int getScreenWidth() {
+        return Resources.getSystem().getDisplayMetrics().widthPixels;
+    }
+
+    public static int getScreenHeight() {
+        return Resources.getSystem().getDisplayMetrics().heightPixels;
+    }
+
+
+
+
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
 
 
 
@@ -195,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void fillInMenue(LinkedList <String> products) {   //adds products to menue from database
-
+          int length=products.size();
         if (flag)
         {
             layout.removeAllViews();
@@ -203,12 +239,20 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        for (int i = 0; i < products.size(); i++) {
+        for (int i = 0; i < length; i++) {
             String name = products.get(i);
             Button tempBut = new Button(MainActivity.this);
             tempBut.setLayoutParams(new ViewGroup.LayoutParams(150, 80));
             tempBut.setText(name);
+            tempBut.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view){
+//                    printName(name);
+                }
+            });
             layout = (GridLayout) findViewById(R.id.gridLayoutItem);
+
             layout.addView(tempBut);
 
 
@@ -225,6 +269,8 @@ public class MainActivity extends AppCompatActivity {
         params.width = ((width * 20) / 100); // 20%
         button.setLayoutParams(params);
     }
+
+
 
 
 }
